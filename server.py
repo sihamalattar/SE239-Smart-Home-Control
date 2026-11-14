@@ -50,7 +50,7 @@ def handle_client(connection, address):
                     break
                 else:
                     connection.sendall(b"ERROR Unknown command (use PING, LIST, QUIT)\n")
-   except (ConnectionError, OSError, UnicodeDecodeError) as error:
+    except (ConnectionError, OSError, UnicodeDecodeError) as error:
         print(f"Connection ended for {address}: {error}")
     finally:
         if username is not None:
